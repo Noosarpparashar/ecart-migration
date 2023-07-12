@@ -8,7 +8,7 @@ import com.its.ecartsales.framework.jobs.{JobEnum, Job}
 object JobFactory {
   def createJob(spark: SparkSession, jobType: JobEnum.JobEnum): Job = {
     jobType match {
-      case JobEnum.KafkaConsumerEcartFactOrder =>
+      case JobEnum.EcartFactOrder =>
         new EcartFactOrder(spark)
 
 
