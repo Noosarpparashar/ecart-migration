@@ -1,0 +1,26 @@
+# .gitignore
+
+# Exclude compiled files and build artifacts
+target/
+out/
+
+# Exclude IDE-specific files and folders
+.bsp/
+.idea/
+
+# Exclude temporary and cache files
+.bloop/
+project/target/
+project/project/target/
+.metals/
+
+# Exclude logs and other generated files
+logs/
+.metals/
+
+# Exclude specific IDE settings or editor configurations
+.vscode/
+.vscode-server/
+
+# Exclude specific OS or editor files
+.DS_Store
