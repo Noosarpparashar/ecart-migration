@@ -2,7 +2,7 @@ package com.its.ecartsales.framework.jobs
 
 import com.its.ecartsales.streaming.kafka.consumer.EcartFactOrder
 import org.apache.spark.sql.SparkSession
-import com.its.ecartsales.framework.jobs.{JobEnum, Job}
+
 
 
 object JobFactory {
