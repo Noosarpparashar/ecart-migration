@@ -10,12 +10,13 @@ import org.apache.spark.sql.functions.{col, from_json, json_tuple, timestamp_sec
 class EcartFactOrder(spark: SparkSession) extends Job {
   import spark.implicits._
 
-  val kafkaBootstrapServers = "http://34.16.170.59:9092,http://34.16.170.59:9093,http://34.16.170.59:9094"
+  val kafkaBootstrapServers = "http://34.123.456.789:9092,http://334.123.456.789:9093,http://34.123.456.789:9094"
+  //val kafkaBootstrapServers = "http://localhost:9092,http://localhost:9093,http://localhost:9094"
 
   val topic = "mysixthtopic.ecart.fact_order"
   val startingOffsets = "earliest"
-  val checkpointLocation = "s3a://ecart-sales-datalake/checkpoint_test_topic9/"
-  val path = "s3a://ecart-sales-datalake/temp-test9/"
+  val checkpointLocation = "s3a://ecart-sales-datalake/checkpoint_test_topic12/"
+  val path = "s3a://ecart-sales-datalake/temp-test12/"
 
   val dateFormat = "yyyyMMdd_HHmmss"
   private val dateTimeFormatter = DateTimeFormatter.ofPattern(dateFormat)
