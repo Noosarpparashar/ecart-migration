@@ -1,7 +1,7 @@
 # Consuming Data from Kafka and Load to AWS S3 | Containerize Multi-Node Spark Cluster with Docker
 
-<h4>This project demonstrates how to create a data lake and containerize a multi-node Spark cluster using Docker and run your Spark code within the containers.
-<p>Using this code, we read data from the Kafka topic in JSON format. The JSON data is then parsed using Spark SQL's json_tuple function to create a DataFrame with relevant columns. The processed data is written to a Parquet file format, which is an efficient columnar storage format for analytics workloads. The output is appended to a specific path in the S3 bucket, created based on the current timestamp.</h4>
+This project demonstrates how to create a data lake and containerize a multi-node Spark cluster using Docker and run your Spark code within the containers.
+<p>Using this code, we read data from the Kafka topic in JSON format. The JSON data is then parsed using Spark SQL's json_tuple function to create a DataFrame with relevant columns. The processed data is written to a Parquet file format. The output is appended to a specific path in the S3 bucket, created based on the current timestamp.
 
 
 1. Clone this repository to your local machine:
