@@ -16,23 +16,33 @@ val dependencies = Seq(
   // https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client
   "org.apache.hadoop" % "hadoop-client" % "3.3.1" % "provided",
   "org.postgresql" % "postgresql" % "42.5.0",
+  "com.amazonaws" % "aws-java-sdk-kms" % "1.12.66",
   "com.typesafe" % "config" % "1.4.2",
+
 
 
 
 
 )
 libraryDependencies ++=dependencies
-// sbt-assembly settings
-
+ //sbt-assembly settings
 assemblyMergeStrategy in assembly := {
-  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case PathList("META-INF", xs@_*) => MergeStrategy.discard
   case x => MergeStrategy.first
 }
+//ThisBuild / assemblyMergeStrategy := {
+//  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+//  case x => MergeStrategy.first
+//}
 
 
 
 lazy val root = (project in file("."))
   .settings(
-    name := "ecart-migration"
+    name := "ecart-migration",
+//    ThisBuild / assemblyMergeStrategy := {
+//      case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+//      case x => MergeStrategy.first
+//    }
+
   )

@@ -7,6 +7,7 @@ services:
       - '7078:8082'
     environment:
       - SPARK_MODE=master
+      - CUSTOMER_MASTER_KEY=fd97c8e0-2d13-4b02-8fe4-be8334ead77e
     volumes:
       - ".:/test-files:rw"
     networks:
