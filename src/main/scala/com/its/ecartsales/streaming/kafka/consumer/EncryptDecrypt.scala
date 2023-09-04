@@ -1,15 +1,9 @@
 package com.its.ecartsales.streaming.kafka.consumer
 
-//import com.amazonaws.auth.{AWSStaticCredentialsProvider, BasicAWSCredentials}
-//import com.amazonaws.client.builder.AwsClientBuilder
-//import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration
+
 import com.amazonaws.regions.Regions
 import com.amazonaws.services.kms.AWSKMSClientBuilder
-//import com.amazonaws.services.kms.model.{DescribeKeyRequest, EncryptRequest}
-//import com.amazonaws.services.secretsmanager.model.GetSecretValueRequest
-//import com.amazonaws.services.secretsmanager.{AWSSecretsManager, AWSSecretsManagerClientBuilder}
 import org.apache.spark.sql.SparkSession
-import org.json4s.DefaultFormats
 import java.util.Base64
 
 import java.nio.ByteBuffer
@@ -19,6 +13,7 @@ object EncryptDecrypt extends App{
   val spark: SparkSession = SparkSession.builder()
     .master("local[1]").appName("SparkByExamples3.com")
     .getOrCreate()
+
 val kmsClient = AWSKMSClientBuilder.standard()
   .withRegion(Regions.US_EAST_1)
   .build()
@@ -73,7 +68,7 @@ val kmsClient = AWSKMSClientBuilder.standard()
 
   // Decrypt using AWS KMS
   val decryptRequest1 = new com.amazonaws.services.kms.model.DecryptRequest()
-    .withKeyId("d155117f-0930-48bf-b827-c87a02eeaac3")
+    .withKeyId(sys.env("CUSTOMER_MASTER_KEY"))
     .withCiphertextBlob(ByteBuffer.wrap(encryptedData1))
 
   val decryptResponse1 = kmsClient.decrypt(decryptRequest1)
