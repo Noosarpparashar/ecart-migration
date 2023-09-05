@@ -8,6 +8,7 @@ class BaseController {
     .master("local[1]").appName("SparkByExamples3.com")
     .getOrCreate()
   private val config = ConfigFactory.load("com/its/ecartsales/configs/dev/s3.conf")
+  println(config)
   private val s3CredentialsConfig = config.getConfig("credentials").getConfig("s3")
   private val s3BucketConfig = s3CredentialsConfig.getConfig("startup-datalake1-rw")
   private val accessKey = s3BucketConfig.getString("accessKey")
