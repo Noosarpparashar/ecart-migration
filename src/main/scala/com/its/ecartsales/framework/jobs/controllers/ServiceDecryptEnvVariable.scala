@@ -2,7 +2,7 @@ package com.its.ecartsales.framework.jobs.controllers
 import com.its.ecartsales.framework.jobs.{Job, JobEnum, JobFactory}
 
 
-object StreamKafkaConsumerEcartFactOrder1 extends BaseController with Job {
+object ServiceDecryptEnvVariable extends BaseController with Job {
   def main(args: Array[String]): Unit = {
 
 
@@ -24,14 +24,14 @@ object StreamKafkaConsumerEcartFactOrder1 extends BaseController with Job {
 
        */
 
-    val jobType = JobEnum.EcartFactOrder
+    val jobType = JobEnum.ReadEnvironmentVariable
     JobFactory.createJob(spark, jobType)
-    println("Hello from controller1")
+    println("Hello from",jobType )
     spark.stop()
-/*
+    /*
 
 
-* */
+    * */
 
   }
 

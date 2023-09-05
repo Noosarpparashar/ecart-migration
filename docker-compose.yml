@@ -7,8 +7,10 @@ services:
       - '7078:8082'
     environment:
       - SPARK_MODE=master
-      - CUSTOMER_MASTER_KEY=${CUSTOMER_MASTER_KEY}
       #- CUSTOMER_MASTER_KEY=fd97c8e0-2d13-4b02-8fe4-be8334ead77e
+      - CUSTOMER_MASTER_KEY=${CUSTOMER_MASTER_KEY}
+    env_file:
+      - /home/parasharprasoon_950/common.env
     volumes:
       - ".:/test-files:rw"
     networks:
@@ -31,8 +33,8 @@ services:
       - SPARK_WORKER_CORES=2
     networks:
       - my-network
-      
-  
+
+
 networks:
   my-network:
     external: true

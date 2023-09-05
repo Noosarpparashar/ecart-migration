@@ -7,6 +7,7 @@ object JobEnum extends Enumeration {
   List of Streaming Jobs used in the project
   */
   val EcartFactOrder: Value = Value("EcartFactOrder")
+  val ReadEnvironmentVariable: Value = Value("ReadEnvironmentVariable")
   val OtherJob: Value = Value("OtherJob")
 //  val Job2: Value = Value("Job2")
 //  val Job3: Value = Value("Job3")

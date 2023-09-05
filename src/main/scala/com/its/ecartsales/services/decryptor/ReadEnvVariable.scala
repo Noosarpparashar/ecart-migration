@@ -1,5 +1,6 @@
 package com.its.ecartsales.services.decryptor
 
-object ReadEnvVariable {
+object ReadEnvVariable extends App {
+  println(sys.env("CUSTOMER_MASTER_KEY"))
 
 }
