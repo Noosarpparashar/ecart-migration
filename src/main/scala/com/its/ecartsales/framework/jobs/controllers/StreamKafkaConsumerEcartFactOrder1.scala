@@ -6,6 +6,7 @@ object StreamKafkaConsumerEcartFactOrder1 extends BaseController with Job {
   def main(args: Array[String]): Unit = {
 
 
+
     /*
     * You can change below configurations if required
     * 1. spark configurations
