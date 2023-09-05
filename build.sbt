@@ -28,7 +28,7 @@ val dependencies = Seq(
 libraryDependencies ++=dependencies
  //sbt-assembly settings
 assemblyMergeStrategy in assembly := {
-  case "reference.conf" => MergeStrategy.concat
+  case "s3.conf" => MergeStrategy.concat
   case PathList("META-INF", xs@_*) => MergeStrategy.discard
   case x => MergeStrategy.first
 }
