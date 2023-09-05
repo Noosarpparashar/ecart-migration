@@ -11,7 +11,7 @@ class BaseController {
   val classpath = System.getProperty("java.class.path")
   println("Classpath:")
   println("******************************************", classpath)
-  private val config = ConfigFactory.load("com/its/ecartsales/configs/dev/s3.conf")
+  private val config = ConfigFactory.load("configs/dev/s3.conf")
 
   private val s3CredentialsConfig = config.getConfig("credentials").getConfig("s3")
   private val s3BucketConfig = s3CredentialsConfig.getConfig("startup-datalake1-rw")
