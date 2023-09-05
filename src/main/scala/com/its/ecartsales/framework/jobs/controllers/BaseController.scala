@@ -7,6 +7,10 @@ class BaseController {
   val spark: SparkSession = SparkSession.builder()
     .master("local[1]").appName("SparkByExamples3.com")
     .getOrCreate()
+
+  val classpath = System.getProperty("java.class.path")
+  println("Classpath:")
+  println("******************************************", classpath)
   private val config = ConfigFactory.load("com/its/ecartsales/configs/dev/s3.conf")
 
   private val s3CredentialsConfig = config.getConfig("credentials").getConfig("s3")

@@ -5,9 +5,7 @@ import com.its.ecartsales.framework.jobs.{Job, JobEnum, JobFactory}
 object ServiceDecryptEnvVariable extends BaseController with Job {
   def main(args: Array[String]): Unit = {
 
-    val classpath = System.getProperty("java.class.path")
-    println("Classpath:")
-    println("******************************************", classpath)
+
 
 
     /*
