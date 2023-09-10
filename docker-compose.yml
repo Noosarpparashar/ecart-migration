@@ -7,7 +7,7 @@ services:
       - '7078:8082'
     environment:
       - SPARK_MODE=master
-      - CUSTOMER_MASTER_KEY=${CUSTOMER_MASTER_KEY}
+      - CUSTOMER_MASTER_KEY=$CUSTOMER_MASTER_KEY
     #env_file:
     #  - /myenv/common.env
     volumes:
