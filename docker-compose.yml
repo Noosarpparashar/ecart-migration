@@ -8,6 +8,8 @@ services:
     environment:
       - SPARK_MODE=master
       - CUSTOMER_MASTER_KEY=$CUSTOMER_MASTER_KEY
+      - AWS_ACCESS_KEY=$AWS_ACCESS_KEY
+      - AWS_SECRET_KEY=$AWS_SECRET_KEY
     #env_file:
     #  - /myenv/common.env
     volumes:
